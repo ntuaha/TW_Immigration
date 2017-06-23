@@ -58,12 +58,12 @@ def cleanSouce(in_path,out_path):
 def writeNotes(path):
   with open(path,'r') as f:
     lines = f.readlines()
-        
-  lines[1] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
+  lines[1] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n"
   with open(path,'w+') as f:
     for line in lines:
       f.write(line)
+
+
 
 def run():  
   source_path = 'raw_data.csv'
