@@ -55,13 +55,22 @@ def cleanSouce(in_path,out_path):
   result.to_csv(out_path,index=False)
   print("處理完成")
 
+def writeNotes(path):
+  with open(path,'r') as f:
+    lines = f.readlines()
+        
+  lines[1] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+  with open(path,'w+') as f:
+    for line in lines:
+      f.write(line)
 
 def run():  
   source_path = 'raw_data.csv'
   out_path = 'source.csv'
   getSource(getSourceURL(),source_path)    
   cleanSouce(source_path,out_path)
-
+  writeNotes('README.md')
 
 if __name__ == "__main__":
   run()
