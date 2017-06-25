@@ -3,7 +3,8 @@
 
 ## 拉取資料 
 python3 run.py
-
+或者是
+python run2.py
 ## 資料
 source.csv
 
